@@ -1,0 +1,18 @@
+SELECT * FROM sample41;
+DESC sample41;
+INSERT INTO sample41 VALUES(1,'ABC','2014-01-25');
+SELECT * FROM sample41;
+
+INSERT INTO sample41(a,no) VALUES('XYZ',2);
+SELECT * FROM sample41;
+
+INSERT INTO sample41(no,a,b) VALUES(3,NULL,NULL);
+SELECT * FROM sample41;
+
+DESC sample411;
+INSERT INTO sample411(no,d) VALUES(1,1);
+SELECT * FROM sample411;
+INSERT INTO sample411(no,d) VALUES(2,DEFAULT);
+SELECT * FROM sample411;
+INSERT INTO sample411(no) VALUES(3);
+SELECT * FROM sample411;
