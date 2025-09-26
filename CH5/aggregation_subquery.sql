@@ -26,3 +26,17 @@ SELECT name, COUNT(name), SUM(quantity) FROM sample51 GROUP BY name ORDER BY SUM
 
 -- 23강 --
 SELECT MIN(a) FROM sample54;
+DELETE FROM sample54 WHERE a = (SELECT MIN(a) FROM sample54);
+SELECT
+(SELECT COUNT(*) FROM sample51) AS sq1,
+(SELECT COUNT(*) FROM sample54) AS sq2;
+UPDATE sample54 SET a = (SELECT MAX(a) FROM sample54);
+SELECT * FROM (SELECT * FROM sample54) AS sq;
+SELECT * FROM (SELECT * FROM (SELECT * FROM sample54) sq1) sq2;
+INSERT INTO sample541 VALUES(
+    (SELECT COUNT(*) FROM sample51),
+    (SELECT count(*) FROM sample54)
+);
+SELECT * from sample541;
+INSERT INTO sample541 SELECT 1, 2;
+SELECT * FROM sample541;
